@@ -2,7 +2,7 @@
 # GitHub Action : .github/workflows/lint.yml
 # Description   : Runs ansible-lint to enforce syntax and best practices
 # Author        : SudoShea
-# Version       : 0.1.0
+# Version       : 1.0.2
 # License       : MIT
 # ==============================================================================
 name: Ansible Lint

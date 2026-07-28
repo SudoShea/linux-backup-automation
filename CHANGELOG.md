@@ -1,4 +1,4 @@
-Changelog - Linux Backup Automation
+# Changelog - Linux Backup Automation
 
 All notable changes to the `linux-backup-automation` Ansible role will be documented in this file.
 
@@ -6,13 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.0.3] - 2026-07-28
+
+### Fixed
+* **CI Role Path Resolution:** Added `tests/roles/linux_backup_automation` directory symlink and `tests/ansible.cfg` to enable `ansible-lint` role discovery during test execution syntax checks (`syntax-check`).
+
+---
+
+## [1.0.2] - 2026-07-28
+
+### Fixed
+* **Ansible Lint Task Order:** Reordered task keys in `tasks/main.yml` to enforce `name` precedes `become` and `block` (`key-order[task]`).
+* **Idempotency Tag:** Added `changed_when: true` to Restic repository initialization command in `tasks/init.yml` (`no-changed-when`).
+* **Test Role Import:** Updated `tests/test.yml` to reference `linux_backup_automation` by role name instead of relative directory paths (`role-name[path]`).
+
+---
+
+## [1.0.1] - 2026-07-28
+
+### Fixed
+* **Galaxy Role Metadata:** Explicitly defined `role_name: linux_backup_automation` and `namespace: sudoshea` in `meta/main.yml` to meet Galaxy and linting rules.
+* **Linting Config:** Added `.ansible-lint` file to enforce production quality rules and exclude test/example files.
+* **Workflow Syntax:** Fixed bracket formatting inside `.github/workflows/lint.yml` (`yaml[brackets]`).
+
+---
+
 ## [1.0.0] - 2026-07-28
 
 ### Added
-* ** Restic Engine Deployment:** Tasks for automated installation, initialisation, and repository configuration using AES-256 encryption.
-* ** Rclone Integration:** Support for multi-destination offsite synchronisation (SFTP, Google Drive, Backblaze B2, AWS S3, GCS).
-* ** Systemd Automation:** Deployed `restic-backup.service` and `restic-backup.timer` to replace legacy crontabs.
-* ** Pruning & Retention Policy:** Standardised automated retention rules (7 daily, 4 weekly, 12 monthly, 1 yearly).
-* ** CLI Restore Utility:** Installed `restic-restore.sh` helper utility to `/usr/local/bin` for interactive snapshot inspection and file recovery.
-* ** CI Quality Enforcement:** Added `.github/workflows/lint.yml` for automated `ansible-lint` testing and status badge.
-* ** Modular Provider Examples:** Created example configurations for various cloud storage targets under `examples/cloud-providers/`.
+* **Restic Engine Deployment:** Tasks for automated installation, initialization, and repository configuration using AES-256 encryption.
+* **Rclone Integration:** Support for multi-destination offsite synchronization (SFTP, Google Drive, Backblaze B2, AWS S3, GCS).
+* **Systemd Automation:** Deployed `restic-backup.service` and `restic-backup.timer` to replace legacy crontabs.
+* **Pruning & Retention Policy:** Standardized automated retention rules (7 daily, 4 weekly, 12 monthly, 1 yearly).
+* **CLI Restore Utility:** Installed `restic-restore.sh` helper utility to `/usr/local/bin` for interactive snapshot inspection and file recovery.
+* **CI Quality Enforcement:** Added `.github/workflows/lint.yml` for automated `ansible-lint` testing and status badge.
+* **Modular Provider Examples:** Created example configurations for various cloud storage targets under `examples/cloud-providers/`.
