@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.0.5] - 2026-07-28
+
+### Fixed
+* **CI Executable Collision:** Streamlined `.github/workflows/lint.yml` by removing redundant manual setup and `pip install` steps that collided with `ansible/ansible-lint@main` binary provisioning.
+
+---
+
 ## [1.0.4] - 2026-07-28
 
 ### Fixed
