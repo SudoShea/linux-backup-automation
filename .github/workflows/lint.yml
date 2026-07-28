@@ -2,7 +2,7 @@
 # GitHub Action : .github/workflows/lint.yml
 # Description   : Runs ansible-lint to enforce syntax and best practices
 # Author        : SudoShea
-# Version       : 1.0.2
+# Version       : 1.0.4
 # License       : MIT
 # ==============================================================================
 name: Ansible Lint
@@ -19,12 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
 
       - name: Install dependencies
         run: |

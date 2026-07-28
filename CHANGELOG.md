@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.0.4] - 2026-07-28
+
+### Fixed
+* **CI Runner Node Runtime:** Upgraded GitHub Actions `actions/checkout` and `actions/setup-python` to `v5` to eliminate Node 20 deprecation warnings on Node 24 runners.
+
+---
+
 ## [1.0.3] - 2026-07-28
 
 ### Fixed
