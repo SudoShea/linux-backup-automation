@@ -2,7 +2,7 @@
 # File        : tasks/init.yml
 # Description : Restic repository initialization and secret file management
 # Author      : SudoShea
-# Version     : 1.0.1
+# Version     : 1.0.2
 # License     : MIT
 # ==============================================================================
 ---
@@ -40,9 +40,10 @@
   failed_when: false
   changed_when: false
 
-- name: Initialize Restic repository if missing
+- name: Initialise Restic repository if missing
   ansible.builtin.command:
     cmd: "restic -r {{ restic_repo_path }} init"
   environment:
     RESTIC_PASSWORD_FILE: "{{ restic_password_file }}"
   when: restic_check.rc != 0
+  changed_when: true

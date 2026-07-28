@@ -2,7 +2,7 @@
 # File        : tests/test.yml
 # Description : Standalone test playbook for linux-backup-automation role
 # Author      : SudoShea
-# Version     : 1.0.1
+# Version     : 1.0.2
 # License     : MIT
 # ==============================================================================
 ---
@@ -17,4 +17,4 @@
       - "/etc/hosts"
     restic_rclone_sync_enabled: false
   roles:
-    - role: "../"
+    - role: linux_backup_automation
