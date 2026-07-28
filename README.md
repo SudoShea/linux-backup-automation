@@ -9,12 +9,12 @@ An enterprise-grade, modular Ansible role that deploys automated, encrypted, ded
 
 ## 🚀 Features
 
-* ** Restic Engine:** Fast, deduplicated, authenticated, and encrypted (`AES-256`) local/remote snapshots.
-* ** Automated Retention:** Enforces prune policies (7 daily, 4 weekly, 12 monthly, 1 yearly).
-* ** Multi-Cloud Offsite Sync:** Integrated `rclone` synchronisation supporting SFTP, Google Drive, Backblaze B2, AWS S3, and Google Cloud Storage.
-* ** Native Systemd Integration:** Service and timer units replace legacy crontabs for reliable scheduling, journald logging, and failure handling.
-* ** CLI Restore Helper Utility:** Ships an interactive helper (`restic-restore.sh`) to `/usr/local/bin` for quick snapshot browsing and file restoration.
-* ** Independent & Standalone:** Can be imported into any Ansible workflow or run as a standalone deployment.
+* **Restic Engine:** Fast, deduplicated, authenticated, and encrypted (`AES-256`) local/remote snapshots.
+* **Automated Retention:** Enforces prune policies (7 daily, 4 weekly, 12 monthly, 1 yearly).
+* **Multi-Cloud Offsite Sync:** Integrated `rclone` synchronisation supporting SFTP, Google Drive, Backblaze B2, AWS S3, and Google Cloud Storage.
+* **Native Systemd Integration:** Service and timer units replace legacy crontabs for reliable scheduling, journald logging, and failure handling.
+* **CLI Restore Helper Utility:** Ships an interactive helper (`restic-restore.sh`) to `/usr/local/bin` for quick snapshot browsing and file restoration.
+* **Independent & Standalone:** Can be imported into any Ansible workflow or run as a standalone deployment.
 
 ---
 
