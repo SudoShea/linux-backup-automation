@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.0.6] - 2026-07-28
+
+### Added
+* **Repository Badges:** Integrated dynamic release version tag and Ansible Core compatibility badges into `README.md`.
+
+### Fixed
+* **CI Node Runtime Policy:** Configured `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24` environment variable and updated `actions/checkout` to `@v6` in `.github/workflows/lint.yml` to eliminate GitHub runner Node 20 deprecation warnings.
+
+---
+
 ## [1.0.5] - 2026-07-28
 
 ### Fixed

@@ -1,6 +1,8 @@
 # 🛡️ Linux Backup Automation
 
 [![Ansible Lint](https://github.com/SudoShea/linux-backup-automation/actions/workflows/lint.yml/badge.svg)](https://github.com/SudoShea/linux-backup-automation/actions/workflows/lint.yml)
+[![Version](https://img.shields.io/github/v/tag/SudoShea/linux-backup-automation?label=release&color=blue)](https://github.com/SudoShea/linux-backup-automation/tags)
+[![Ansible Core](https://img.shields.io/badge/ansible--core-%3E%3D2.15-5BB85C?logo=ansible)](https://docs.ansible.com/ansible/latest/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An enterprise-grade, modular Ansible role that deploys automated, encrypted, deduplicated backups using **Restic** and offsite replication using **Rclone** managed via native **systemd** timers.

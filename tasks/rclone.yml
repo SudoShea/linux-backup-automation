@@ -2,7 +2,7 @@
 # File        : tasks/rclone.yml
 # Description : Installs rclone and deploys encrypted cloud configuration
 # Author      : SudoShea
-# Version     : 1.0.5
+# Version     : 1.0.6
 # License     : MIT
 # ==============================================================================
 ---

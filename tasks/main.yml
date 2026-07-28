@@ -2,7 +2,7 @@
 # Role Task   : tasks/main.yml
 # Description : Main task orchestrator for linux_backup_automation
 # Author      : SudoShea
-# Version     : 1.0.5
+# Version     : 1.0.6
 # License     : MIT
 # ==============================================================================
 ---
