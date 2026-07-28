@@ -2,7 +2,7 @@
 # File        : tasks/init.yml
 # Description : Restic repository initialization and secret file management
 # Author      : SudoShea
-# Version     : 1.0.0
+# Version     : 1.0.1
 # License     : MIT
 # ==============================================================================
 ---

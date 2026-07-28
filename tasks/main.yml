@@ -2,7 +2,7 @@
 # File        : tasks/main.yml
 # Description : Task orchestration entrypoint for linux-backup-automation
 # Author      : SudoShea
-# Version     : 1.0.0
+# Version     : 1.0.1
 # License     : MIT
 # ==============================================================================
 ---

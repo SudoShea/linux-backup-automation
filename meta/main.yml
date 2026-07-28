@@ -1,27 +1,36 @@
 # ==============================================================================
-# File        : meta/main.yml
-# Description : Role metadata and platform compatibility rules
-# Author      : SudoShea
-# Version     : 1.0.0
-# License     : MIT
+# Role Metadata : meta/main.yml
+# Description   : Galaxy metadata and requirements for linux_backup_automation
+# Author        : SudoShea
+# Version       : 1.0.1
+# License       : MIT
 # ==============================================================================
----
 galaxy_info:
   author: SudoShea
-  description: Automated Restic backup engine with rclone offsite sync and systemd timers.
+  description: Automated Restic & Rclone backup role with systemd timers
+  company: SudoShea
   license: MIT
   min_ansible_version: "2.15"
+  role_name: linux_backup_automation
+  namespace: sudoshea
   platforms:
-    - name: EL
-      versions: ["8", "9"]
     - name: Debian
-      versions: ["11", "12"]
+      versions:
+        - all
     - name: Ubuntu
-      versions: ["22.04", "24.04"]
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
   galaxy_tags:
     - backup
     - restic
-    - security
-    - systemd
     - rclone
+    - systemd
+    - security
+
 dependencies: []

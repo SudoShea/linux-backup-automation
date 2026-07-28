@@ -2,7 +2,7 @@
 # File        : tests/test.yml
 # Description : Standalone test playbook for linux-backup-automation role
 # Author      : SudoShea
-# Version     : 1.0.0
+# Version     : 1.0.1
 # License     : MIT
 # ==============================================================================
 ---
