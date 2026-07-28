@@ -1,0 +1,27 @@
+# ==============================================================================
+# File        : meta/main.yml
+# Description : Role metadata and platform compatibility rules
+# Author      : SudoShea
+# Version     : 1.0.0
+# License     : MIT
+# ==============================================================================
+---
+galaxy_info:
+  author: SudoShea
+  description: Automated Restic backup engine with rclone offsite sync and systemd timers.
+  license: MIT
+  min_ansible_version: "2.15"
+  platforms:
+    - name: EL
+      versions: ["8", "9"]
+    - name: Debian
+      versions: ["11", "12"]
+    - name: Ubuntu
+      versions: ["22.04", "24.04"]
+  galaxy_tags:
+    - backup
+    - restic
+    - security
+    - systemd
+    - rclone
+dependencies: []

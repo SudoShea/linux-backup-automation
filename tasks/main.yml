@@ -1,0 +1,22 @@
+# ==============================================================================
+# File        : tasks/main.yml
+# Description : Task orchestration entrypoint for linux-backup-automation
+# Author      : SudoShea
+# Version     : 1.0.0
+# License     : MIT
+# ==============================================================================
+---
+- name: Execute Backup Automation Engine Tasks
+  block:
+    - name: Include Restic Installation Tasks
+      ansible.builtin.include_tasks: install.yml
+
+    - name: Include Rclone Installation Tasks
+      ansible.builtin.include_tasks: rclone.yml
+
+    - name: Include Repository Initialization Tasks
+      ansible.builtin.include_tasks: init.yml
+
+    - name: Include Systemd Automation Tasks
+      ansible.builtin.include_tasks: systemd.yml
+  become: true
