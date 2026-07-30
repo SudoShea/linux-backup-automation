@@ -2,7 +2,7 @@
 # File        : defaults/main.yml
 # Description : Vendor-agnostic default configuration variables
 # Author      : SudoShea
-# Version     : 1.0.6
+# Version     : 1.1.0
 # License     : MIT
 # ==============================================================================
 ---
@@ -38,3 +38,9 @@ restic_rclone_options: {}
 # --- System Executables ---
 restic_script_path: "/usr/local/bin/restic-backup.sh"
 restic_restore_helper_path: "/usr/local/bin/restic-restore.sh"
+
+# --- Automated Restore Verification Settings ---
+restic_verify_enabled: true
+restic_verify_calendar: "Sun *-*-* 03:00:00"
+restic_verify_data_subset: "10%"
+restic_verify_script_path: "/usr/local/bin/test-restore.sh"

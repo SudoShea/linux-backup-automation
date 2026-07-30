@@ -2,7 +2,7 @@
 # Role Task   : tasks/main.yml
 # Description : Main task orchestrator for linux_backup_automation
 # Author      : SudoShea
-# Version     : 1.0.6
+# Version     : 1.1.0
 # License     : MIT
 # ==============================================================================
 ---
@@ -20,3 +20,7 @@
 
     - name: Include Systemd Automation Tasks
       ansible.builtin.include_tasks: systemd.yml
+
+- name: Include automated restore verification tasks
+  ansible.builtin.include_tasks: verify.yml
+  when: restic_verify_enabled | bool

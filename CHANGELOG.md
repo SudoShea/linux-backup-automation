@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.1.0] - 2026-07-30
+
+### Added
+* **Automated Restore Verification Pipeline:** Introduced `tasks/verify.yml` along with templates for `test-restore.sh.j2`, `restic-verify.service.j2`, and `restic-verify.timer.j2` to execute weekly 10% data-subset integrity checks and sandboxed restores into `/tmp`.
+* **Verification Role Defaults:** Added `restic_verify_enabled`, `restic_verify_calendar`, `restic_verify_data_subset`, and `restic_verify_script_path` configuration variables to `defaults/main.yml`.
+
+### Fixed
+* **Systemd Handler Execution in Dry-Run:** Added an explicit `flush_handlers` meta step and `daemon_reload: true` to `tasks/verify.yml` to ensure systemd unit files are registered before timer activation.
+
+---
+
 ## [1.0.6] - 2026-07-28
 
 ### Added
