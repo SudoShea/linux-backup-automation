@@ -57,26 +57,37 @@ Default variables are defined in `defaults/main.yml`:
 ```text
 linux-backup-automation/
 ├── defaults/
-│   └── main.yml           # Default role variables
+│   └── main.yml               # Default role variables & verification settings
 ├── examples/
-│   └── cloud-providers/   # Sample provider vars (gdrive.yml, sftp.yml, b2.yml, etc.)
+│   └── cloud-providers/       # Sample provider vars (gdrive.yml, sftp.yml, b2.yml, etc.)
 ├── files/
-│   └── restic-restore.sh  # Interactive CLI restore utility
+│   └── restic-restore.sh      # Interactive CLI restore utility
 ├── handlers/
-│   └── main.yml           # Systemd daemon-reload handlers
+│   └── main.yml               # Systemd daemon-reload handlers
 ├── meta/
-│   └── main.yml           # Galaxy metadata
+│   └── main.yml               # Galaxy metadata
+├── scripts/
+│   └── bump_version.py        # Version management script
 ├── tasks/
-│   ├── main.yml           # Role task orchestrator
-│   ├── install.yml        # Restic package installation
-│   ├── rclone.yml         # Rclone setup and configuration
-│   ├── init.yml           # Repository initialisation & password deployment
-│   └── systemd.yml        # Systemd service, timer, and wrapper deployment
-└── templates/
-    ├── rclone.conf.j2     # Rclone remote definitions
-    ├── restic-backup.sh.j2# Backup wrapper script with retention & offsite sync
-    ├── restic-backup.service.j2
-    └── restic-backup.timer.j2
+│   ├── main.yml               # Role task orchestrator
+│   ├── install.yml            # Restic package installation
+│   ├── rclone.yml             # Rclone setup and configuration
+│   ├── init.yml               # Repository initialisation & password deployment
+│   ├── systemd.yml            # Backup systemd service, timer, and wrapper deployment
+│   └── verify.yml             # Restore verification pipeline tasks
+├── templates/
+│   ├── rclone.conf.j2         # Rclone remote definitions
+│   ├── restic-backup.sh.j2    # Backup wrapper script with retention & offsite sync
+│   ├── restic-backup.service.j2
+│   ├── restic-backup.timer.j2
+│   ├── test-restore.sh.j2     # Automated 10% data check & sandbox restore script
+│   ├── restic-verify.service.j2
+│   └── restic-verify.timer.j2
+└── tests/                     # Local test harness
+    ├── ansible.cfg
+    ├── inventory
+    ├── roles/
+    └── test.yml
 ```
 ---
 
