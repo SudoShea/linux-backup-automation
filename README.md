@@ -17,6 +17,7 @@ An enterprise-grade, modular Ansible role that deploys automated, encrypted, ded
 * **Native Systemd Integration:** Service and timer units replace legacy crontabs for reliable scheduling, journald logging, and failure handling.
 * **CLI Restore Helper Utility:** Ships an interactive helper (`restic-restore.sh`) to `/usr/local/bin` for quick snapshot browsing and file restoration.
 * **Independent & Standalone:** Can be imported into any Ansible workflow or run as a standalone deployment.
+* **Automated Weekly Restore Verification:** Scheduled systemd timer running a 10% repository data subset integrity check and test restores into an isolated `/tmp` sandbox directory.
 
 ---
 
@@ -44,6 +45,10 @@ Default variables are defined in `defaults/main.yml`:
 | `restic_keep_monthly` | `12` | Number of monthly snapshots to retain |
 | `restic_keep_yearly` | `1` | Number of yearly snapshots to retain |
 | `rclone_offsite_targets` | `[]` | List of offsite remotes configured in `rclone.conf.j2` |
+| `restic_verify_enabled` | `true` | Enable automated weekly integrity check and sandbox restore |
+| `restic_verify_calendar` | `"Sun *-*-* 03:00:00"` | Systemd timer calendar schedule for verification |
+| `restic_verify_data_subset` | `"10%"` | Percentage of repository data packs verified during check |
+| `restic_verify_script_path` | `"/usr/local/bin/test-restore.sh"` | Target installation path for verification script |
 
 ---
 
@@ -121,6 +126,23 @@ ansible-playbook -i inventory deploy-backups.yml --ask-vault-pass
 This role handles two sensitive items that should always be encrypted using **Ansible Vault**:
 1. **Restic Repository Password**: Deployed to `/etc/restic/password` with `0600` permissions. Passed via `restic_password`.
 2. **Rclone Configuration Tokens**: Rendered into `/etc/rclone/rclone.conf` with `0600` permissions. Passed via individual provider variables or raw token JSON strings.
+
+---
+
+## 🧪 Verification
+The role deploys an automated systemd timer (`restic-verify.timer`) that runs weekly (Sunday at 03:00) to execute a 10% data-subset repository integrity check and verify snapshot restoration into an isolated `/tmp` sandbox directory.
+**Run manual verification check:**
+```bash
+sudo /usr/local/bin/test-restore.sh
+```
+Check verification timer status & schedule:
+```bash
+sudo systemctl status restic-verify.timer
+```
+View verification logs via journald:
+```bash
+sudo journalctl -u restic-verify.service -n 50 --no-pager
+```
 
 ---
 
